@@ -24,11 +24,11 @@ function App() {
 
 				{/* Routes */}
 				<Route exact path="/">
-					<Products  />
+					<Products />
 				</Route>
 
 				<Route path="/cart">
-					<ShoppingCart cart={cart} />
+					<ShoppingCart />
 				</Route>
 			</ProductContext.Provider>
 		</div>

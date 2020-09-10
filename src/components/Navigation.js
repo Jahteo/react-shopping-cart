@@ -4,6 +4,7 @@ import ProductContext from "../contexts/ProductContext"
 
 const Navigation = props => {
 	const {cart} = useContext(ProductContext);
+
 	return (
 		<div className="navigation">
 			<NavLink to="/">Products</NavLink>
