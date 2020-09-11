@@ -13,9 +13,11 @@ const ShoppingCart = props => {
 		}, 0).toFixed(2);
 	};
 
+	console.log(cart)
 
 	return (
 		<div className="shopping-cart">
+
 			{cart.map(item => (
 				<Item key={item.id} {...item} />
 			))}

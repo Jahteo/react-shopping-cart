@@ -14,25 +14,26 @@ function App() {
 	const [cart, setCart] = useState([]);
 
 	const addItem = item => {
-		setCart(cart.concat(item))
+		//needed to give it an actually unique id for each duplicate. doing so here.
+		setCart(cart.concat({...item, id: Math.random(), productId: item.id}))
 		// add the given item to the cart
 	};
 
 	return (
 		<div className="App">
 			<ProductContext.Provider value={{ products, addItem }}>
-			<CartContext.Provider value={{ cart }}>
-				<Navigation />
+				<CartContext.Provider value={{ cart, setCart }}>
+					<Navigation />
 
-				{/* Routes */}
-				<Route exact path="/">
-					<Products />
-				</Route>
+					{/* Routes */}
+					<Route exact path="/">
+						<Products />
+					</Route>
 
-				<Route path="/cart">
-					<ShoppingCart />
-				</Route>
-			</CartContext.Provider>
+					<Route path="/cart">
+						<ShoppingCart />
+					</Route>
+				</CartContext.Provider>
 			</ProductContext.Provider>
 		</div>
 	);
