@@ -18,8 +18,8 @@ const ShoppingCart = props => {
 	return (
 		<div className="shopping-cart">
 
-			{cart.map(item => (
-				<Item key={item.id} {...item} />
+			{cart.map(({id, inventoryItem, quantity}) => (
+				<Item key={id} id={id} quantity={quantity} item={inventoryItem} />
 			))}
 
 			<div className="shopping-cart__checkout">

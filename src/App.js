@@ -15,7 +15,7 @@ function App() {
 
 	const addItem = item => {
 		//needed to give it an actually unique id for each duplicate. doing so here.
-		setCart(cart.concat({...item, id: Math.random(), productId: item.id}))
+		setCart(cart.concat({ id: Math.random(), inventoryItem: item}))
 		// add the given item to the cart
 	};
 
